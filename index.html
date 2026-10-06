@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Livret d'accueil · La Bastide du Bonrepos</title>
+<meta name="description" content="Livret d'accueil de la Bastide du Bonrepos, Bonrepos-Riquet : arrivée, Wi-Fi, consignes, bonnes adresses et partenaires.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#f8f3ec">
+<meta property="og:title" content="Livret d'accueil · La Bastide du Bonrepos">
+<meta property="og:description" content="Toutes les informations pour votre séjour à la Bastide du Bonrepos.">
+<meta property="og:image" content="img/couverture.jpg">
+<link rel="icon" href="img/logo.jpg">
+<link rel="apple-touch-icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fond:#f8f3ec; --carte:#ffffff; --sable:#efe6da; --brique:#8b3b22; --brique-f:#6e2c18;
+  --texte:#3a2b23; --doux:#7a6a5f; --trait:#e6dacb; --ombre:0 6px 24px rgba(80,45,25,.08);
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+body{background:var(--fond);color:var(--texte);font:300 15.5px/1.6 Poppins,system-ui,sans-serif}
+img{display:block;max-width:100%}
+a{color:var(--brique)}
+strong,b{font-weight:500}
+
+/* Barre du haut */
+.barre{position:fixed;inset:0 0 auto 0;z-index:30;height:56px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px 0 16px;padding-top:env(safe-area-inset-top);background:rgba(248,243,236,.92);backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--trait);transform:translateY(-100%);transition:transform .3s}
+.barre.vue{transform:none}
+.barre .nom{font:italic 500 18px Lora,serif;color:var(--brique-f);text-decoration:none}
+.btn-menu{display:flex;align-items:center;gap:8px;border:0;background:var(--brique);color:#fff;font:500 13px Poppins;letter-spacing:.06em;
+  padding:9px 14px;border-radius:999px;cursor:pointer}
+.btn-menu svg{width:16px;height:16px}
+.btn-menu.flottant{position:fixed;top:calc(14px + env(safe-area-inset-top));right:14px;z-index:31;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.barre.vue~.btn-menu.flottant{display:none}
+
+/* Menu sommaire */
+.menu{position:fixed;inset:0;z-index:40;background:var(--fond);overflow-y:auto;padding:calc(20px + env(safe-area-inset-top)) 20px 40px;
+  opacity:0;pointer-events:none;transition:opacity .25s}
+.menu.ouvert{opacity:1;pointer-events:auto}
+.menu-tete{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.menu-tete h2{font:italic 500 24px Lora,serif;color:var(--brique-f)}
+.fermer{border:0;background:var(--sable);width:40px;height:40px;border-radius:50%;font-size:22px;color:var(--brique-f);cursor:pointer}
+.menu h3{font:500 11px Poppins;letter-spacing:.2em;text-transform:uppercase;color:var(--doux);margin:22px 0 8px}
+.menu ul{list-style:none;background:var(--carte);border-radius:var(--r);box-shadow:var(--ombre);overflow:hidden}
+.menu li+li{border-top:1px solid var(--trait)}
+.menu a{display:flex;justify-content:space-between;padding:13px 16px;text-decoration:none;color:var(--texte);font-weight:400}
+.menu a::after{content:"›";color:var(--brique);font-size:18px;line-height:1}
+
+/* Couverture */
+.couv{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;overflow:hidden}
+.couv>img.fond{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.couv::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(30,15,8,.75))}
+.couv-logo{position:absolute;top:calc(22px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);z-index:2;width:110px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.3)}
+.couv-txt{position:relative;z-index:2;text-align:center;padding:0 20px 34px}
+.couv h1{font:italic 400 clamp(44px,13vw,72px)/1.05 Lora,serif}
+.couv p{font:400 10.5px Poppins;letter-spacing:.22em;text-transform:uppercase;margin-top:12px;opacity:.95}
+.couv .defiler{display:inline-block;margin-top:26px;color:#fff;text-decoration:none;font:500 12px Poppins;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid rgba(255,255,255,.6);border-radius:999px;padding:10px 20px}
+
+/* Mise en page */
+main{max-width:720px;margin:0 auto;padding:0 16px 40px}
+.raccourcis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:-28px 0 8px;position:relative;z-index:3}
+.raccourcis a{background:var(--carte);border-radius:var(--r);box-shadow:var(--ombre);padding:14px;text-decoration:none;color:var(--texte);display:flex;flex-direction:column;gap:6px}
+.raccourcis svg{width:22px;height:22px;color:var(--brique)}
+.raccourcis b{font-weight:500;font-size:14px}
+.raccourcis span{font-size:12px;color:var(--doux);line-height:1.35}
+
+.partie{margin-top:44px}
+.partie-titre{text-align:center;margin:56px 0 4px}
+.partie-titre span{font:500 11px Poppins;letter-spacing:.28em;text-transform:uppercase;color:var(--brique)}
+.partie-titre::after{content:"";display:block;width:40px;height:2px;background:var(--brique);margin:10px auto 0;opacity:.6}
+section{margin-top:40px}
+.sur{font:italic 400 17px Lora,serif;color:var(--brique)}
+h2{font:500 25px/1.15 Lora,serif;letter-spacing:.04em;text-transform:uppercase;color:var(--texte);margin:2px 0 14px}
+h4{font:500 15px Poppins;color:var(--brique-f);margin:18px 0 6px}
+p+p{margin-top:10px}
+.intro{color:var(--doux)}
+.photo{border-radius:var(--r);overflow:hidden;margin:16px 0;box-shadow:var(--ombre)}
+.photo img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}
+.duo img{border-radius:12px;aspect-ratio:1/1;object-fit:cover;width:100%;height:100%}
+.carte{background:var(--carte);border-radius:var(--r);box-shadow:var(--ombre);padding:16px 18px;margin:12px 0}
+.carte.sable{background:var(--sable);box-shadow:none}
+.carte.brique{background:var(--brique);color:#fff;box-shadow:none}
+.carte.brique .etiq{color:#f3d6c6}
+.carte.brique a{color:#fff}
+.etiq{font:500 10.5px Poppins;letter-spacing:.2em;text-transform:uppercase;color:var(--brique);display:block;margin-bottom:4px}
+.grille{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:560px){.grille{grid-template-columns:1fr 1fr}}
+.liste{list-style:none}
+.liste li{position:relative;padding-left:18px;margin:6px 0}
+.liste li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--brique)}
+.nums{list-style:none;counter-reset:n}
+.nums li{counter-increment:n;position:relative;padding:12px 0 12px 44px;border-top:1px solid var(--trait)}
+.nums li:first-child{border-top:0}
+.nums li::before{content:counter(n);position:absolute;left:0;top:11px;width:30px;height:30px;border-radius:50%;background:var(--sable);
+  color:var(--brique-f);font:500 13px/30px Poppins;text-align:center}
+.chiffres{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.chiffres div{background:var(--carte);border-radius:var(--r);box-shadow:var(--ombre);text-align:center;padding:14px 6px}
+.chiffres b{display:block;font:500 30px Lora,serif;color:var(--brique)}
+.chiffres span{font-size:12px;color:var(--doux)}
+.heures{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.heures .carte{margin:0}
+.heures big{display:block;font:500 24px Lora,serif;color:var(--brique-f);margin:2px 0 6px}
+.heures p{font-size:13.5px}
+
+/* Bouton d'action */
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--brique);color:#fff;text-decoration:none;border:0;cursor:pointer;
+  font:500 14px Poppins;padding:11px 18px;border-radius:999px;margin:6px 6px 0 0}
+.btn.clair{background:var(--sable);color:var(--brique-f)}
+.btn svg{width:16px;height:16px}
+.carte.brique .btn{background:#fff;color:var(--brique-f)}
+
+/* Wi-Fi */
+.wifi{text-align:center;padding:24px 18px}
+.wifi svg{width:44px;height:44px;color:var(--brique);margin:0 auto 6px}
+.wifi .val{font:500 20px Poppins;margin:2px 0 14px;word-break:break-all}
+.wifi .mdp{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:18px;background:var(--sable);border-radius:10px;padding:10px 12px;letter-spacing:.04em}
+
+/* Règles, mise en garde */
+.regles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.regles .carte{margin:0;padding:14px}
+.regles b{display:block;font:500 22px Lora,serif;color:var(--brique)}
+.regles .etiq{margin:2px 0 4px}
+.regles p{font-size:13px;line-height:1.45}
+.sombre{background:#2c211c;color:#f4ebe2;border-radius:var(--r);overflow:hidden;margin-top:16px}
+.sombre img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.sombre ul{list-style:none;padding:8px 18px 14px}
+.sombre li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:1px solid rgba(255,255,255,.12)}
+.sombre li:first-child{border-top:0}
+.sombre li i{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.5);font:normal 500 12px/24px Poppins;text-align:center}
+.sombre .conseil{padding:0 18px 18px;font-size:13px;opacity:.8}
+
+/* Adresses */
+.adresse{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--trait)}
+.adresse:first-of-type{border-top:0}
+.adresse img{flex:none;width:84px;height:84px;border-radius:12px;object-fit:cover}
+.adresse .etiq{margin:0}
+.adresse small{display:block;font:400 11px Poppins;letter-spacing:.06em;color:var(--doux);text-transform:uppercase;margin-bottom:2px}
+.adresse p{font-size:14px;line-height:1.45}
+.badge{display:inline-block;background:var(--brique);color:#fff;font:500 10px Poppins;letter-spacing:.1em;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
+
+/* Tableaux */
+.tab{width:100%;border-collapse:collapse;font-size:13.5px}
+.tab th{font:500 10.5px Poppins;letter-spacing:.12em;text-transform:uppercase;color:var(--doux);text-align:right;padding:6px 4px;border-bottom:1px solid var(--trait)}
+.tab th:first-child{text-align:left}
+.tab td{padding:8px 4px;border-bottom:1px solid var(--trait);text-align:right;white-space:nowrap;vertical-align:top}
+.tab td:first-child{text-align:left;white-space:normal}
+.tab td small{display:block;color:var(--doux);font-size:12px}
+.tab .groupe td{font:500 14px Lora,serif;color:var(--brique-f);padding-top:16px;border-bottom:0}
+.defile{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.defile .tab{min-width:460px}
+.menus{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;margin:14px -16px 0;padding-left:16px;padding-right:16px}
+.menus a{flex:0 0 78%;scroll-snap-align:center}
+.menus img{border-radius:12px;box-shadow:var(--ombre);width:100%}
+.prix{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.prix .carte{margin:0;text-align:center;padding:12px 6px}
+.prix big{display:block;font:500 22px Lora,serif;color:var(--brique)}
+.prix span{font-size:11.5px;color:var(--doux);display:block;line-height:1.35}
+
+/* Partenaire */
+.part{background:var(--carte);border-radius:var(--r);box-shadow:var(--ombre);overflow:hidden;margin-top:16px}
+.part>img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.part .corps{padding:18px}
+.part h2{margin-bottom:8px}
+
+.voitures{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 4px}
+.voitures div{background:#fff;border:1px solid var(--trait);border-radius:12px;padding:10px;text-align:center}
+.voitures img{width:100%;aspect-ratio:16/10;object-fit:contain}
+.voitures b{display:block;font:500 13px Poppins;margin-top:6px}
+.voitures span{font-size:12px;color:var(--doux)}
+@media(min-width:560px){.voitures{grid-template-columns:repeat(4,1fr)}}
+/* Avant de partir */
+.coche{list-style:none}
+.coche label{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--trait);cursor:pointer}
+.coche li:first-child label{border-top:0}
+.coche input{appearance:none;-webkit-appearance:none;flex:none;width:22px;height:22px;border:1.5px solid var(--brique);border-radius:6px;margin-top:1px;display:grid;place-content:center;background:#fff}
+.coche input:checked{background:var(--brique)}
+.coche input:checked::after{content:"";width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.coche input:checked+span{text-decoration:line-through;color:var(--doux)}
+.urgences{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.urgences a{background:var(--carte);border-radius:12px;box-shadow:var(--ombre);text-align:center;padding:10px 4px;text-decoration:none;color:var(--texte)}
+.urgences b{display:block;font:500 24px Lora,serif;color:var(--brique)}
+.urgences span{font:500 9.5px Poppins;letter-spacing:.1em;text-transform:uppercase;color:var(--doux)}
+
+.fin{text-align:center;margin-top:56px}
+.fin .logo{width:80px;margin:22px auto 0;border-radius:10px}
+footer{text-align:center;padding:28px 16px calc(28px + env(safe-area-inset-bottom));font-size:12.5px;color:var(--doux);border-top:1px solid var(--trait);margin-top:40px}
+footer b{display:block;font:italic 500 20px Lora,serif;color:var(--brique-f);margin-bottom:4px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:#2c211c;color:#fff;
+  padding:10px 18px;border-radius:999px;font-size:13.5px;opacity:0;transition:.25s;z-index:50;pointer-events:none}
+.toast.vu{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<header class="barre" id="barre">
+  <a class="nom" href="#haut">La Bastide du Bonrepos</a>
+  <button class="btn-menu" data-ouvrir>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>SOMMAIRE
+  </button>
+</header>
+<button class="btn-menu flottant" data-ouvrir>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>SOMMAIRE
+</button>
+
+<nav class="menu" id="menu" aria-label="Sommaire">
+  <div class="menu-tete"><h2>Sommaire</h2><button class="fermer" data-fermer aria-label="Fermer">×</button></div>
+  <h3>Votre séjour</h3>
+  <ul>
+    <li><a href="#bienvenue">Bienvenue</a></li>
+    <li><a href="#histoire">L'histoire de la Bastide</a></li>
+    <li><a href="#hote">Votre hôte</a></li>
+    <li><a href="#domaine">Le domaine</a></li>
+    <li><a href="#horaires">Arrivée &amp; départ</a></li>
+    <li><a href="#wifi">Wi-Fi</a></li>
+  </ul>
+  <h3>La maison</h3>
+  <ul>
+    <li><a href="#interieur">L'intérieur</a></li>
+    <li><a href="#consignes-int">Consignes intérieur</a></li>
+    <li><a href="#cuisine">Cuisine &amp; linge</a></li>
+    <li><a href="#exterieur">L'extérieur</a></li>
+    <li><a href="#consignes-ext">Consignes extérieur</a></li>
+    <li><a href="#savoir">Bon à savoir</a></li>
+    <li><a href="#sauna">Sauna</a></li>
+    <li><a href="#jacuzzi">Jacuzzi</a></li>
+    <li><a href="#nid">Le Nid (bulle)</a></li>
+    <li><a href="#regles">Règles de la maison</a></li>
+  </ul>
+  <h3>Les alentours</h3>
+  <ul>
+    <li><a href="#autour">À faire autour</a></li>
+    <li><a href="#restaurants">Restaurants</a></li>
+    <li><a href="#toulouse">Visiter Toulouse</a></li>
+    <li><a href="#eau">Toulouse au fil de l'eau</a></li>
+    <li><a href="#autrement">Toulouse autrement</a></li>
+    <li><a href="#sorties">Bars &amp; sorties</a></li>
+  </ul>
+  <h3>Nos partenaires</h3>
+  <ul>
+    <li><a href="#wines">Wines Addict · vins &amp; champagnes</a></li>
+    <li><a href="#endroit">L'Endroit · restaurant</a></li>
+    <li><a href="#animaparc">Animaparc · parc familial</a></li>
+    <li><a href="#gragnaguette">La Gragnaguette · guinguette</a></li>
+    <li><a href="#transferts">Transferts &amp; chauffeur</a></li>
+    <li><a href="#cocktails">Platines &amp; Cocktails</a></li>
+    <li><a href="#watts">Watts Elle's · chanteuse</a></li>
+    <li><a href="#theo">Théo Lemaire · magicien</a></li>
+    <li><a href="#sourires">Sourires &amp; Souvenirs · photobooth</a></li>
+  </ul>
+  <h3>Pratique</h3>
+  <ul>
+    <li><a href="#utiles">Informations utiles</a></li>
+    <li><a href="#partir">Avant de partir</a></li>
+  </ul>
+</nav>
+
+<div class="couv" id="haut">
+  <img class="fond" src="img/couverture.jpg" alt="La Bastide du Bonrepos, sa façade en brique et la piscine">
+  <img class="couv-logo" src="img/logo.jpg" alt="Logo La Bastide du Bonrepos">
+  <div class="couv-txt">
+    <h1>Livret d'accueil</h1>
+    <p>La Bastide du Bonrepos · Bonrepos-Riquet</p>
+    <a class="defiler" href="#bienvenue">Découvrir</a>
+  </div>
+</div>
+
+<main>
+  <div class="raccourcis">
+    <a href="#wifi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 8.8a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor"/></svg><b>Wi-Fi</b><span>Réseau et mot de passe</span></a>
+    <a href="#horaires"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><b>Horaires</b><span>Arrivée 17h · départ 11h</span></a>
+    <a href="tel:+33685213518"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><b>Nous appeler</b><span>06 85 21 35 18</span></a>
+    <a href="https://maps.google.com/?q=441+route+de+l%27Hermitage+31590+Bonrepos-Riquet" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><b>Itinéraire</b><span>441 route de l'Hermitage</span></a>
+  </div>
+
+  <!-- ===================== VOTRE SÉJOUR ===================== -->
+  <section id="bienvenue">
+    <div class="sur">Bonjour !</div>
+    <h2>Bienvenue</h2>
+    <p>Bienvenue à la Bastide du Bonrepos ! Merci d'avoir choisi notre domaine. Nous avons pensé à chaque détail pour que votre séjour se déroule dans les meilleures conditions et que vous repartiez avec de merveilleux souvenirs.</p>
+    <p class="intro">Ce livret rassemble toutes les informations utiles : fonctionnement du domaine, consignes, bonnes adresses et partenaires. En cas de besoin, n'hésitez pas à nous contacter. Le bouton <b>Sommaire</b>, en haut à droite, vous emmène directement à chaque rubrique.</p>
+    <div class="photo"><img src="img/salon.jpg" alt="Le salon de la Bastide" loading="lazy"></div>
+  </section>
+
+  <section id="histoire">
+    <div class="sur">L'histoire</div>
+    <h2>De la Bastide</h2>
+    <p>Amoureux de la brique toulousaine et de la Ville rose, Jere Bos s'est toujours imaginé investir dans une propriété de caractère, à la fois proche de la ville et chargée d'histoire. Passionné de sport depuis tout petit, il rêvait aussi d'un lieu où l'on puisse bouger, partager et se retrouver.</p>
+    <p>Attentif aux opportunités, il découvre cette bâtisse quatre jours seulement après la parution de l'annonce. D'abord peu convaincu, il décide malgré tout de la visiter, par curiosité et parce que chaque expérience peut s'avérer enrichissante.</p>
+    <p>Ce qui devait être une simple visite devient une évidence. Plus qu'un bien, la Bastide était chargée de souvenirs, et ses anciens propriétaires l'ont profondément marqué :</p>
+    <div class="carte sable"><p class="sur" style="font-size:16px">« Les personnes âgées possèdent une richesse inestimable de savoir et d'expériences. La dame qui vivait ici me rappelait mon arrière-grand-mère, ce qui a sans doute renforcé mon attachement immédiat à cette maison. »</p></div>
+    <p>Porté par son ambition, il engage rapidement les démarches. Face à d'autres acquéreurs, son projet est retenu. Chez le notaire, il ressent un mélange d'excitation et d'affection pour les anciens propriétaires, qui laissent derrière eux vingt ans de vie. À la sortie du rendez-vous, son premier réflexe est de se rendre sur place. Dans la Bastide vide de tout meuble, un sursaut de lucidité le gagne :</p>
+    <div class="carte sable"><p class="sur" style="font-size:16px">« C'était désormais à moi de piloter ce projet… Je me sentais tout petit face à l'ampleur de la tâche. »</p></div>
+    <p>Conscient des défis, il s'entoure des bonnes personnes pour redonner vie au lieu. Après des mois de rénovations et d'aménagements, l'objectif est clair : faire de la Bastide un véritable havre de paix pour les voyageurs.</p>
+    <p><b>2025 marque un tournant</b> avec l'ouverture officielle de la Bastide en location courte durée. Aujourd'hui, elle conjugue l'élégance et le charme authentique d'un ancien corps de ferme avec le confort contemporain, entre Toulouse et Albi, au cœur du Triangle du Pastel.</p>
+    <div class="photo"><img src="img/bar.jpg" alt="Le bar et le baby-foot" loading="lazy"></div>
+  </section>
+
+  <section id="hote">
+    <div class="sur">Présentation</div>
+    <h2>Votre hôte</h2>
+    <p>Nous mettons un point d'honneur à vous offrir un séjour agréable et sans souci. Notre objectif : que vous vous sentiez comme chez vous.</p>
+    <div class="grille" style="margin-top:12px">
+      <div class="carte" style="margin:0"><span class="etiq">Disponibilité</span>Nous restons joignables pendant tout votre séjour pour la moindre question, demande d'assistance ou recommandation.</div>
+      <div class="carte" style="margin:0"><span class="etiq">Propreté</span>La propriété est soigneusement nettoyée et inspectée avant votre arrivée pour vous garantir un séjour dans les meilleures conditions.</div>
+      <div class="carte" style="margin:0"><span class="etiq">Flexibilité</span>Arrivée anticipée ou départ tardif possibles, sous réserve de disponibilité et moyennant un supplément.</div>
+      <div class="carte" style="margin:0"><span class="etiq">Expérience locale</span>Nous serons ravis de vous partager nos meilleures adresses et nos conseils pour découvrir les environs.</div>
+    </div>
+    <div class="carte sable" style="margin-top:12px">
+      <span class="etiq">Nous contacter</span>
+      <p style="font:500 18px Lora,serif">Eloïse Lazzunel</p>
+      <a class="btn" href="tel:+33685213518">Appeler · 06 85 21 35 18</a>
+      <a class="btn clair" href="mailto:realty.conciergerie@gmail.com">Écrire un e-mail</a>
+    </div>
+  </section>
+
+  <section id="domaine">
+    <div class="sur">À propos du</div>
+    <h2>Domaine</h2>
+    <p>Tombés sous le charme de cette magnifique Bastide, nous l'avons rénovée avec soin pour vous offrir un lieu d'exception. Petite anecdote : elle a appartenu à un célèbre astronaute français.</p>
+    <p>Au cœur d'un ancien corps de ferme rénové, le domaine offre une vue panoramique imprenable sur les Pyrénées. Situé à Bonrepos-Riquet, entre Toulouse et Albi, il promet un séjour inoubliable dans un cadre naturel.</p>
+    <div class="chiffres"><div><b>15</b><span>couchages</span></div><div><b>9</b><span>chambres</span></div><div><b>5</b><span>salles de bain</span></div></div>
+    <p>Cuisinière SMEG, sauna, jacuzzi, piscine et terrains de sport : le lieu idéal pour vos vacances comme pour vos événements — mariages, anniversaires, séminaires ou repas d'entreprise.</p>
+    <div class="photo"><img src="img/domaine.jpg" alt="Le domaine et sa vue" loading="lazy"></div>
+  </section>
+
+  <section id="horaires">
+    <div class="sur">Les horaires</div>
+    <h2>Arrivée &amp; départ</h2>
+    <div class="heures">
+      <div class="carte"><span class="etiq">Votre arrivée</span><big>dès 17h</big><p>L'accueil se fait à partir de 17h, afin de nous laisser le temps de préparer la Bastide. Le check-in se fait <b>en personne</b> : nous vous accueillons et vous faisons visiter le domaine.</p></div>
+      <div class="carte"><span class="etiq">Votre départ</span><big>avant 11h</big><p>Le check-out doit être effectué au plus tard à 11h, pour préparer la Bastide pour les voyageurs suivants. Il se fait aussi <b>en personne</b>, pour l'état des lieux de sortie.</p></div>
+    </div>
+    <div class="carte brique">
+      <span class="etiq">Arrivée anticipée et/ou départ tardif</span>
+      <p><b>Arrivée anticipée</b> : possible dès 13h. <b>Départ tardif</b> : possible jusqu'à 14h. Sous réserve de disponibilité et moyennant un supplément. Contactez-nous à l'avance pour en faire la demande.</p>
+      <a class="btn" href="tel:+33685213518">Faire la demande</a>
+    </div>
+    <div class="carte sable"><span class="etiq">Le jour du départ, en bref</span>Éteindre les lumières · sortir et trier les poubelles · faire et ranger la vaisselle · laisser le domaine en bon état. <a href="#partir">Voir la liste complète</a>.</div>
+  </section>
+
+  <section id="wifi">
+    <div class="sur">Connexion</div>
+    <h2>Wi-Fi</h2>
+    <div class="carte wifi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 8.8a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1" fill="currentColor"/></svg>
+      <span class="etiq">Réseau</span>
+      <div class="val">Livebox</div>
+      <span class="etiq">Mot de passe</span>
+      <div class="val mdp" id="mdp">HoS5XKxf6RCVmCsq4q</div>
+      <button class="btn" id="copier"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>Copier le mot de passe</button>
+    </div>
+  </section>
+
+  <!-- ===================== LA MAISON ===================== -->
+  <div class="partie-titre"><span>La maison</span></div>
+
+  <section id="interieur">
+    <div class="sur">À propos de</div>
+    <h2>L'intérieur</h2>
+    <p>Dès votre arrivée, laissez-vous séduire par l'authenticité et le confort de cet ancien corps de ferme rénové avec soin, qui allie élégance et fonctionnalité.</p>
+    <div class="duo"><img src="img/chambre.jpg" alt="Une chambre" loading="lazy"><img src="img/cuisine.jpg" alt="La cuisine" loading="lazy"></div>
+    <h4>Espaces nuit &amp; salles de bain</h4>
+    <ul class="liste">
+      <li><b>9 chambres</b> décorées avec soin : 6 chambres doubles avec literie premium, 3 chambres enfants avec plusieurs lits simples</li>
+      <li><b>5 salles de bain</b> modernes et spacieuses : 3 privatives dans les chambres doubles, 2 partagées</li>
+      <li><b>5 WC</b></li>
+    </ul>
+    <h4>Cuisine entièrement équipée</h4>
+    <ul class="liste">
+      <li>Cuisinière SMEG, four, plaque de cuisson, micro-ondes</li>
+      <li>Grand réfrigérateur, congélateur, lave-vaisselle</li>
+      <li>Grille-pain, bouilloire, cafetière et ustensiles</li>
+      <li>Arrière-cuisine et buanderie avec lave-linge et sèche-linge</li>
+    </ul>
+    <h4>Espaces de vie</h4>
+    <ul class="liste">
+      <li>Un grand salon convivial</li>
+      <li>Une salle à manger spacieuse</li>
+      <li>Un bar avec baby-foot</li>
+      <li>Une mezzanine détente : coin lecture et jeux de société</li>
+      <li>Un espace bureau pour travailler au calme</li>
+    </ul>
+    <h4>Confort toute l'année</h4>
+    <p>Le chauffage est régulé automatiquement en hiver. En été, grâce à l'excellente isolation et aux épais murs de brique, la Bastide conserve une fraîcheur naturelle.</p>
+  </section>
+
+  <section id="consignes-int">
+    <div class="sur">Consignes</div>
+    <h2>Intérieur</h2>
+    <p class="intro">Pour votre confort et la préservation de ce lieu unique, merci de respecter les consignes suivantes.</p>
+    <div class="carte">
+      <ol class="nums">
+        <li><b>Non-fumeur.</b> Il est interdit de fumer à l'intérieur de la Bastide. Merci de fumer uniquement à l'extérieur et d'utiliser les cendriers prévus à cet effet.</li>
+        <li><b>Grande cheminée.</b> Le foyer ouvert est uniquement décoratif et ne doit en aucun cas être utilisé.</li>
+        <li><b>Muret entre salle à manger et salon.</b> Il peut servir d'assise, mais il est déconseillé d'y marcher et interdit de sauter dessus, pour votre sécurité.</li>
+        <li><b>Décoration et mobilier.</b> Certaines pièces sont uniques et réalisées par des artistes locaux. Merci d'en prendre soin et de ne pas déplacer les meubles.</li>
+        <li><b>Cuisinière à gaz.</b> Veillez à bien l'éteindre après chaque utilisation.</li>
+        <li><b>Propreté et rangement.</b> Merci de laisser les lieux aussi propres et ordonnés que possible.</li>
+      </ol>
+    </div>
+    <div class="carte sable"><b>Besoin d'aide ?</b> Une question sur le fonctionnement d'un équipement (eau, électricité, chauffage…) ? <a href="tel:+33685213518">Appelez-nous</a>, nous serons ravis de vous aider.</div>
+  </section>
+
+  <section id="cuisine">
+    <div class="sur">La</div>
+    <h2>Cuisine</h2>
+    <ul class="liste">
+      <li>Utilisez les planches à découper fournies : ne coupez pas directement sur les plans de travail.</li>
+      <li>Rincez votre vaisselle après utilisation.</li>
+      <li>Des sacs-poubelle sont disponibles sous l'évier.</li>
+      <li>Éloignez tout ce qui pourrait prendre feu des sources de chaleur.</li>
+      <li>Essuyez les plans de travail avant votre départ.</li>
+      <li>Quelque chose est cassé ou ne fonctionne pas ? Cela peut arriver : prévenez-nous simplement.</li>
+    </ul>
+    <p class="sur" style="margin-top:10px">Profitez de la cuisine !</p>
+    <div class="sur" style="margin-top:26px">Le</div>
+    <h2>Linge</h2>
+    <p>Tout le linge de maison est fourni pendant votre séjour :</p>
+    <ul class="liste">
+      <li><b>Linge de lit</b> : les lits sont faits à votre arrivée.</li>
+      <li><b>Serviettes de toilette</b> : une par personne. Besoin de plus ? Contactez-nous.</li>
+    </ul>
+    <div class="carte sable">En option pendant votre séjour : changement de draps et de linge, et ménage intermédiaire (avec supplément).</div>
+  </section>
+
+  <section id="exterieur">
+    <div class="sur">À propos de</div>
+    <h2>L'extérieur</h2>
+    <p>Un véritable écrin de verdure, avec une vue panoramique à 360° sur les Pyrénées.</p>
+    <div class="photo"><img src="img/vue-aerienne.jpg" alt="Vue aérienne du domaine" loading="lazy"></div>
+    <div class="grille">
+      <div>
+        <h4>Loisirs &amp; bien-être</h4>
+        <ul class="liste">
+          <li>Piscine privée</li><li>Jacuzzi en plein air</li><li>Sauna extérieur</li>
+          <li>Terrains de sport : tennis, basket, foot, volley, handball</li>
+          <li>Mini-forêt ombragée pour balades et pique-niques</li>
+          <li>Espace guinguette et terrasse avec grande table</li>
+          <li>Barbecue et plancha</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pratique &amp; sécurité</h4>
+        <ul class="liste">
+          <li>Cour intérieure privative pour stationner</li>
+          <li>Borne de recharge pour véhicules électriques</li>
+          <li>Système de sécurité avec alarme</li>
+        </ul>
+        <h4>Matériel de sport fourni</h4>
+        <p style="font-size:14px">4 raquettes de tennis, balles et lance-balles · 4 raquettes de badminton et volants · ballons de handball, basket, volley et foot · skateboard et diabolo · souffleur de feuilles sur batterie.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="consignes-ext">
+    <div class="sur">Consignes</div>
+    <h2>Extérieur</h2>
+    <p class="intro">Pour que chacun profite des extérieurs tout en préservant le domaine et l'environnement :</p>
+    <div class="carte">
+      <ol class="nums">
+        <li><b>Mégots.</b> Ne jetez pas vos mégots au sol (jardin, terrasse, abords) : des cendriers sont à votre disposition.</li>
+        <li><b>Plancha à gaz.</b> Fermez bien la bouteille de gaz après chaque utilisation.</li>
+        <li><b>Barbecue au feu de bois.</b> Gardez toujours de l'eau à portée de main pendant son utilisation.</li>
+        <li><b>Piscine.</b> Bâchez-la après chaque baignade pour préserver la température et la propreté de l'eau. La baignade des enfants se fait sous l'entière responsabilité des adultes.</li>
+        <li><b>Mare à poissons.</b> Elle est sécurisée : il est interdit d'enjamber la clôture.</li>
+        <li><b>Enfants.</b> Ils restent sous l'entière responsabilité de leurs parents dans tous les espaces extérieurs, notamment autour de la piscine, du jacuzzi et des terrains de jeu.</li>
+        <li><b>Sauna &amp; jacuzzi.</b> Merci de respecter leurs <a href="#sauna">consignes d'utilisation</a>. Le sauna est réservé aux adultes.</li>
+        <li><b>Éclairage.</b> Éteignez les lumières extérieures chaque soir pour limiter la pollution lumineuse.</li>
+        <li><b>Mobilier et équipements.</b> Respectez le mobilier de jardin et les installations (terrasse, transats, filets…) et rangez-les après utilisation.</li>
+        <li><b>Terrain multisport.</b> Accès libre : merci de prendre soin du matériel mis à disposition.</li>
+      </ol>
+    </div>
+    <div class="carte sable"><b>Besoin d'aide ?</b> Une question sur la piscine, le jacuzzi, le sauna, le barbecue ou un autre équipement ? <a href="tel:+33685213518">Appelez-nous</a>.</div>
+  </section>
+
+  <section id="savoir">
+    <div class="sur">Bon</div>
+    <h2>À savoir</h2>
+    <div class="grille">
+      <div class="carte" style="margin:0"><span class="etiq">Check-in</span>L'arrivée se fait en personne : nous vous accueillons et vous présentons la Bastide pour un séjour en toute sérénité.</div>
+      <div class="carte" style="margin:0"><span class="etiq">Check-out</span>Le départ se fait aussi en personne : état des lieux ensemble, photo de groupe et au revoir !</div>
+      <div class="carte" style="margin:0"><span class="etiq">Stationnement</span>Une cour intérieure privative et sécurisée accueille vos véhicules.</div>
+      <div class="carte" style="margin:0"><span class="etiq">Sécurité</span>Un système de sécurité renforcé veille sur le domaine, tout en préservant son atmosphère paisible.</div>
+      <div class="carte" style="margin:0"><span class="etiq">Chauffage &amp; fraîcheur</span>Chauffage régulé automatiquement. En été, les murs de brique gardent la fraîcheur : pas besoin de climatisation.</div>
+      <div class="carte" style="margin:0"><span class="etiq">Inventaire</span>La liste complète des équipements vous est envoyée par e-mail avant votre séjour.</div>
+    </div>
+    <h4>Équipements à disposition</h4>
+    <ul class="liste">
+      <li><b>Confort</b> : 2 sèche-cheveux, fer et table à repasser</li>
+      <li><b>Détente</b> : cave à vin (18 bouteilles) et station de musique</li>
+      <li><b>Divertissement</b> : Wi-Fi gratuit, jeux de société (Scrabble, Uno, Cluedo), livres pour tous les âges</li>
+      <li><b>Bébé</b> : chaise haute, lit parapluie, baignoire, barrière de sécurité, transat bébé</li>
+    </ul>
+  </section>
+
+  <section id="sauna">
+    <div class="sur">Espace bien-être</div>
+    <h2>Consignes sauna</h2>
+    <div class="sombre">
+      <img src="img/sauna.jpg" alt="Le sauna" loading="lazy">
+      <ul>
+        <li><i>15</i><span><b>15 minutes maximum</b> par cycle.</span></li>
+        <li><i>18</i><span><b>Interdit aux mineurs.</b></span></li>
+        <li><i>!</i><span>Interdit aux femmes enceintes et aux personnes souffrant de problèmes cardiovasculaires ou respiratoires.</span></li>
+        <li><i>✕</i><span>Ni tabac, ni alcool à l'intérieur du sauna.</span></li>
+        <li><i>⏻</i><span><b>Éteignez le sauna</b> après chaque utilisation.</span></li>
+      </ul>
+      <p class="conseil">Conseil : hydratez-vous avant et après la séance, et sortez immédiatement en cas de malaise.</p>
+    </div>
+  </section>
+
+  <section id="jacuzzi">
+    <div class="sur">Espace bien-être</div>
+    <h2>Consignes jacuzzi</h2>
+    <div class="sombre">
+      <img src="img/jacuzzi.jpg" alt="Le jacuzzi" loading="lazy" style="aspect-ratio:4/3">
+      <ul>
+        <li><i>20</i><span><b>15 à 20 minutes</b> de bain recommandées, pour éviter tout risque de malaise.</span></li>
+        <li><i>!</i><span><b>Interdit aux enfants non accompagnés.</b> Il est conseillé d'être au moins deux.</span></li>
+        <li><i>✕</i><span>Ne pas sauter, plonger ni s'asseoir sur les rebords.</span></li>
+        <li><i>✕</i><span>Ne rien verser dans l'eau (aucun produit). Interdit de fumer, de manger et de boire de l'alcool dans le jacuzzi.</span></li>
+        <li><i>⏻</i><span><b>Après chaque utilisation</b> : éteignez, baissez la température et refermez la couverture pour conserver la chaleur et protéger l'eau.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="nid">
+    <div class="sur">Nuit insolite</div>
+    <h2>Le Nid de la Bastide</h2>
+    <div class="photo"><img src="img/nid.jpg" alt="La bulle du Nid de la Bastide" loading="lazy"></div>
+    <p>Envie d'une nuit sous les étoiles ? Une bulle installée au cœur du domaine, face à la nature, avec une vue dégagée sur la campagne et les Pyrénées.</p>
+    <h4>La bulle</h4>
+    <ul class="liste">
+      <li>Pour 2 personnes</li><li>Un lit double avec literie de qualité</li><li>Vue sur les Pyrénées</li>
+      <li>Climatisation et chauffage</li><li>Douche extérieure avec eau chaude</li><li>WC extérieurs privatifs</li>
+      <li>Linge de lit et serviettes fournis</li><li>Café, thé et sucre à disposition</li>
+    </ul>
+    <h4>Comment en profiter ?</h4>
+    <p>La bulle peut être ajoutée à votre séjour en supplément : idéale pour un couple, des jeunes mariés ou une surprise d'anniversaire.</p>
+    <div class="carte brique"><span class="etiq">En supplément · tarif sur demande</span>Contactez-nous pour connaître les disponibilités et le prix.<br><a class="btn" href="tel:+33685213518">Réserver · 06 85 21 35 18</a></div>
+  </section>
+
+  <section id="regles">
+    <div class="sur">Quelques</div>
+    <h2>Règles</h2>
+    <div class="regles">
+      <div class="carte"><b>01</b><span class="etiq">Respect des lieux</span><p>Prenez soin de la maison et des extérieurs en évitant toute dégradation.</p></div>
+      <div class="carte"><b>02</b><span class="etiq">Animaux</span><p>Nous adorons les animaux ! Ils sont acceptés sur demande préalable, avec supplément.</p></div>
+      <div class="carte"><b>03</b><span class="etiq">Non-fumeur</span><p>Il est strictement interdit de fumer à l'intérieur de la Bastide.</p></div>
+      <div class="carte"><b>04</b><span class="etiq">Fêtes &amp; bruit</span><p>Pas de grande fête sans accord préalable. Merci de limiter le bruit après 22h.</p></div>
+      <div class="carte"><b>05</b><span class="etiq">Voyageurs</span><p>Aucun voyageur supplémentaire n'est accepté sans nous en avoir informés au préalable.</p></div>
+      <div class="carte"><b>06</b><span class="etiq">Sécurité</span><p>Respectez les règles de sécurité et n'utilisez pas d'appareil électrique dangereux.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== LES ALENTOURS ===================== -->
+  <div class="partie-titre"><span>Les alentours</span></div>
+
+  <section id="autour">
+    <div class="sur">À faire, à voir…</div>
+    <h2>Autour de la Bastide</h2>
+    <div class="carte">
+      <div class="adresse"><div><span class="etiq">Accrobranche</span><small>Natura Game · 5 min</small><p>Parc aventure en forêt, avec des parcours dans les arbres pour petits et grands.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Paintball</span><small>Natura Game · 5 min</small><p>Affrontez vos amis sur des terrains aménagés en pleine nature.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Escape game</span><small>Natura Game · 5 min</small><p>Une aventure immersive en pleine nature, entre amis ou en famille.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Balade à cheval</span><small>5 min</small><p>Balades ou cours d'équitation dans un cadre apaisant, pour tous les niveaux.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Mini-golf</span><small>Castel Golf · 7 min</small><p>Un parcours ludique et accessible à tous, en famille ou entre amis.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Bubble foot</span><small>Castel Golf · 7 min</small><p>Du football dans une bulle gonflable : fous rires assurés !</p></div></div>
+      <div class="adresse"><div><span class="etiq">Lac du Laragou</span><small>10 min</small><p>Sentiers de randonnée paisibles avec de superbes vues sur le lac.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Château de Bonrepos-Riquet</span><small>2 min</small><p>Le château de Pierre-Paul Riquet, créateur du canal du Midi, et sa Grotte de la Fraîcheur.</p></div></div>
+    </div>
+  </section>
+
+  <section id="restaurants">
+    <div class="sur">À proximité</div>
+    <h2>Restaurants</h2>
+    <div class="carte">
+      <div class="adresse"><img src="img/endroit-resto.jpg" alt="" loading="lazy"><div><span class="etiq">L'Endroit <span class="badge">−15 %</span></span><small>3 min · partenaire</small><p>Plats faits maison et ambiance conviviale, à deux pas de la Bastide. <a href="#endroit">Voir l'offre</a></p></div></div>
+      <div class="adresse"><img src="img/gragnaguette-resto.jpg" alt="" loading="lazy"><div><span class="etiq">La Gragnaguette <span class="badge">−10 %</span></span><small>4 min · partenaire</small><p>Restaurant guinguette pour partager de bons moments en famille ou entre amis. <a href="#gragnaguette">Voir l'offre</a></p></div></div>
+      <div class="adresse"><img src="img/o-saveurs.jpg" alt="" loading="lazy"><div><span class="etiq">Ô Saveurs</span><small>Rouffiac-Tolosan · 10 min</small><p>Restaurant gastronomique étoilé : cuisine raffinée et créative dans un cadre chaleureux.</p></div></div>
+      <div class="adresse"><img src="img/bonne-auberge.jpg" alt="" loading="lazy"><div><span class="etiq">La Bonne Auberge</span><small>15 min</small><p>Cuisine traditionnelle française à base de produits frais et de saison. Le chef Éric Puel et son équipe vous accueillent pour une expérience authentique.</p></div></div>
+      <div class="adresse"><img src="img/bistroquet.jpg" alt="" loading="lazy"><div><span class="etiq">Le Bistroquet</span><small>Centre de Toulouse · 25 min</small><p>Bistrot chaleureux, cuisine française raffinée de produits frais et de saison, belle carte des vins.</p></div></div>
+    </div>
+  </section>
+
+  <section id="toulouse">
+    <div class="sur">À faire, à voir…</div>
+    <h2>Visiter Toulouse</h2>
+    <p class="intro">À environ 25 minutes de la Bastide.</p>
+    <div class="photo"><img src="img/toulouse-nuit.jpg" alt="Toulouse de nuit" loading="lazy"></div>
+    <div class="carte">
+      <div class="adresse"><div><span class="etiq">Le Capitole</span><p>Le cœur de Toulouse : hôtel de ville et théâtre du Capitole, entourés de cafés et de restaurants.</p></div></div>
+      <div class="adresse"><img src="img/lafayette.jpg" alt="" loading="lazy"><div><span class="etiq">Galeries Lafayette</span><p>Le temple du shopping toulousain, en plein centre-ville.</p></div></div>
+      <div class="adresse"><img src="img/jacobins.jpg" alt="" loading="lazy"><div><span class="etiq">Couvent des Jacobins</span><p>Église gothique célèbre pour son « palmier » de pierre.</p></div></div>
+      <div class="adresse"><img src="img/saint-sernin.jpg" alt="" loading="lazy"><div><span class="etiq">Basilique Saint-Sernin</span><p>Chef-d'œuvre de l'art roman, classé au patrimoine mondial de l'UNESCO.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Allées Jean-Jaurès</span><p>Fontaines illuminées et ambiance animée, surtout en soirée.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Marché Victor-Hugo</span><p>Le paradis des gourmands : produits frais et régionaux, restaurants à l'étage.</p></div></div>
+      <div class="adresse"><img src="img/augustins.jpg" alt="" loading="lazy"><div><span class="etiq">Musée des Augustins</span><p>Le musée des beaux-arts, dans un magnifique ancien couvent.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Jardin des Plantes</span><p>Un grand parc en ville, idéal pour une pause nature.</p></div></div>
+    </div>
+  </section>
+
+  <section id="eau">
+    <div class="sur">Balades</div>
+    <h2>Toulouse au fil de l'eau</h2>
+    <div class="carte">
+      <div class="adresse"><img src="img/canal.jpg" alt="" loading="lazy"><div><span class="etiq">Canal du Midi</span><p>Classé au patrimoine mondial de l'UNESCO, parfait pour une balade à pied ou à vélo.</p></div></div>
+      <div class="adresse"><img src="img/daurade.jpg" alt="" loading="lazy"><div><span class="etiq">Quai de la Daurade</span><p>Promenade au bord de la Garonne, idéale au coucher du soleil.</p></div></div>
+      <div class="adresse"><img src="img/pont-neuf.jpg" alt="" loading="lazy"><div><span class="etiq">Pont Neuf</span><p>Le plus ancien pont de Toulouse, avec une superbe vue sur la Garonne.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Jardin japonais</span><p>Un jardin zen inspiré des paysages traditionnels japonais.</p></div></div>
+      <div class="adresse"><img src="img/saint-georges.jpg" alt="" loading="lazy"><div><span class="etiq">Place Saint-Georges</span><p>Charmante place entourée de cafés et de boutiques.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Halle de la Machine</span><p>Machines géantes animées, spectacles et démonstrations.</p></div></div>
+    </div>
+  </section>
+
+  <section id="autrement">
+    <div class="sur">Espace, sciences &amp; sport</div>
+    <h2>Toulouse autrement</h2>
+    <div class="carte">
+      <div class="adresse"><img src="img/cite-espace.jpg" alt="" loading="lazy"><div><span class="etiq">Cité de l'espace</span><p>Un parc dédié à l'exploration spatiale, avec expositions et simulateurs.</p></div></div>
+      <div class="adresse"><img src="img/aeroscopia.jpg" alt="" loading="lazy"><div><span class="etiq">Musée Aeroscopia</span><p>L'univers de l'aéronautique et des avions mythiques comme le Concorde.</p></div></div>
+      <div class="adresse"><img src="img/museum.jpg" alt="" loading="lazy"><div><span class="etiq">Muséum de Toulouse</span><p>Un musée d'histoire naturelle fascinant sur la biodiversité et les sciences de la vie.</p></div></div>
+      <div class="adresse"><div><span class="etiq">Le Stadium de Toulouse</span><p>Surnommé le « Petit Wembley », c'est le plus grand stade de la ville. Sur l'île du Ramier, il accueille le Toulouse Football Club (TFC) et de grandes rencontres internationales.</p></div></div>
+      <div class="adresse"><img src="img/stade.jpg" alt="" loading="lazy"><div><span class="etiq">Stade Ernest-Wallon</span><p>Le temple du Stade Toulousain, l'un des clubs de rugby les plus titrés d'Europe. Assister à un match des Rouge et Noir, c'est vivre la ferveur toulousaine !</p></div></div>
+    </div>
+  </section>
+
+  <section id="sorties">
+    <div class="sur">À environ 35 min</div>
+    <h2>Bars &amp; sorties</h2>
+    <div class="carte">
+      <div class="adresse"><img src="img/cosmopolitain.jpg" alt="" loading="lazy"><div><span class="etiq">Le Cosmopolitain</span><small>Toulouse centre</small><p>Bar à cocktails tendance, ambiance chic et feutrée : idéal pour un afterwork ou une soirée entre amis.</p></div></div>
+      <div class="adresse"><img src="img/biche.jpg" alt="" loading="lazy"><div><span class="etiq">Ma Biche sur le Toit</span><small>Toulouse centre</small><p>Sur le toit des Galeries Lafayette : vue imprenable, cuisine moderne et cocktails.</p></div></div>
+      <div class="adresse"><img src="img/sorties.jpg" alt="" loading="lazy"><div><span class="etiq">L'Ubu</span><small>Toulouse</small><p>Boîte de nuit mythique de Toulouse : électro, house et hip-hop jusqu'au bout de la nuit.</p></div></div>
+      <div class="adresse"><div><span class="etiq">L'Étoile</span><small>L'Union</small><p>Discothèque à L'Union, pour prolonger la soirée sur le dancefloor.</p></div></div>
+      <div class="adresse"><img src="img/voile-blanche.jpg" alt="" loading="lazy"><div><span class="etiq">La Voile Blanche</span><small>Sesquières</small><p>Restaurant, bar et plage urbaine avec piscine et transats : l'esprit vacances sans quitter Toulouse.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ===================== PARTENAIRES ===================== -->
+  <div class="partie-titre"><span>Nos partenaires</span></div>
+  <p class="intro" style="text-align:center;margin-top:10px">… et profitez de leurs offres réservées aux voyageurs de la Bastide.</p>
+
+  <section id="wines">
+    <div class="part">
+      <img src="img/wines.jpg" alt="Wines Addict à la Bastide" loading="lazy" style="aspect-ratio:4/3">
+      <div class="corps">
+        <div class="sur">Partenaire</div>
+        <h2>Wines Addict</h2>
+        <p>Pour les champagnes et les vins, la Bastide a choisi Wines Addict.</p>
+        <p>Spécialiste du sur-mesure, Wines Addict s'adapte aux envies de chacun et met en lumière le travail passionné de petits vignerons. Loin des standards, la maison valorise les terroirs et les artisans engagés dans le respect de la vigne, de l'humain et de la biodiversité — des valeurs qui résonnent avec celles de la Bastide.</p>
+        <p class="sur" style="font-size:16px;margin-top:12px">« Il faut aimer les gens qui font les vins pour pouvoir les vendre correctement. »</p>
+        <div class="carte sable"><span class="etiq">Offert</span>Chaque groupe séjournant à la Bastide se voit offrir le champagne « Les Originelles ».</div>
+        <div class="carte brique"><span class="etiq">Bon plan · −15 %</span>Commandez au moins 2 semaines avant votre séjour : la livraison est faite le jour de votre arrivée.</div>
+        <h4 style="margin-top:22px">Carte des vins</h4>
+        <table class="tab">
+          <thead><tr><th>Prix TTC</th><th>Prix</th><th>−15 %</th></tr></thead>
+          <tbody>
+            <tr class="groupe"><td colspan="3">Champagnes</td></tr>
+            <tr><td>Drappier Brut Nature</td><td>40,00</td><td>34,00</td></tr>
+            <tr><td>Champagne Clandestin « Boréal »<small>blanc de noirs</small></td><td>56,00</td><td>47,50</td></tr>
+            <tr><td>Champagne Clandestin « Austral »<small>blanc de noirs</small></td><td>60,00</td><td>51,00</td></tr>
+            <tr class="groupe"><td colspan="3">Pét'Nat — pour un peu de fun</td></tr>
+            <tr><td>Domaine Grès Vaillant « Les Bulles de la Cabane »<small>Limoux</small></td><td>16,50</td><td>14,00</td></tr>
+            <tr class="groupe"><td colspan="3">Vins blancs</td></tr>
+            <tr><td>Domaine Grès Vaillant « Les Chênes »<small>Limoux, mauzac</small></td><td>16,50</td><td>14,00</td></tr>
+            <tr><td>Chablis Giraudon</td><td>16,00</td><td>13,50</td></tr>
+            <tr><td>Le Vin Vogueur « Du vin dans les voiles »<small>Tunisie</small></td><td>22,00</td><td>18,50</td></tr>
+            <tr><td>Domaine Massilan « Mazet de Jo »<small>Saint-Guilhem-le-Désert</small></td><td>12,00</td><td>10,00</td></tr>
+            <tr><td>Domaine Grès Vaillant « Les Gravettes »<small>Limoux, sauvignon</small></td><td>14,00</td><td>11,00</td></tr>
+            <tr><td>Domaine Le Roc « Le Bouysselet »<small>Fronton</small></td><td>20,00</td><td>17,00</td></tr>
+            <tr class="groupe"><td colspan="3">Vins rouges</td></tr>
+            <tr><td>Domaine Mouthes le Bihan « L'Aimé Chai »<small>Côtes de Duras</small></td><td>11,00</td><td>9,50</td></tr>
+            <tr><td>Domaine Massilan « Le Mazet de Jo »<small>nielluccio</small></td><td>12,00</td><td>10,00</td></tr>
+            <tr><td>Domaine Massilan « Joseph »<small>syrah</small></td><td>18,00</td><td>15,50</td></tr>
+            <tr><td>Domaine Grès Vaillant « Le Pin »<small>Limoux, pinot noir</small></td><td>16,50</td><td>14,00</td></tr>
+            <tr><td>Domaine Le Roc « Don Quichotte »<small>Fronton</small></td><td>16,00</td><td>13,50</td></tr>
+          </tbody>
+        </table>
+        <p class="intro" style="margin-top:12px;font-size:13.5px">Envie d'une cuvée haut de gamme ou d'une demande spéciale ? Parlez-nous-en : nous étudierons la demande selon les possibilités d'approvisionnement et votre budget.</p>
+        <a class="btn" href="tel:+33685213518">Commander par la conciergerie</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="endroit">
+    <div class="part">
+      <img src="img/endroit.jpg" alt="Le restaurant L'Endroit" loading="lazy" style="aspect-ratio:4/3">
+      <div class="corps">
+        <div class="sur">Partenaire gourmand</div>
+        <h2>L'Endroit</h2>
+        <p>Un restaurant à seulement 3 minutes de la Bastide : plats faits maison et ambiance conviviale.</p>
+        <ul class="liste" style="margin-top:8px">
+          <li>Pizzas à emporter : du mardi au vendredi, midi et soir</li>
+          <li>Burgers maison à emporter : vendredi et samedi soir</li>
+          <li>Restaurant, bar &amp; grill, planches apéro</li>
+          <li>Plat du jour renouvelé chaque midi</li>
+          <li>Terrasse ouverte de mai à fin septembre</li>
+          <li>Formule petit-déjeuner avec la boulangerie Les Délices de Gragnague</li>
+        </ul>
+        <div class="carte brique"><span class="etiq">Bon plan · −15 %</span>15 % de réduction sur votre addition pour tout séjour à la Bastide du Bonrepos.</div>
+        <a class="btn" href="tel:+33561356810">Réserver · 05 61 35 68 10</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="animaparc">
+    <div class="part">
+      <img src="img/animaparc.jpg" alt="Animaparc" loading="lazy" style="aspect-ratio:4/3">
+      <div class="corps">
+        <div class="sur">Partenaire famille</div>
+        <h2>Animaparc</h2>
+        <p>Une superbe aventure en famille, à 50 minutes de la Bastide.</p>
+        <p>Manèges à sensations, forêt de dinosaures grandeur nature et ferme pédagogique de plus de 150 animaux : une journée riche en découvertes pour petits et grands. À ne pas manquer : les attractions Jurassik'Vol et Condor Fury.</p>
+        <div class="carte sable"><span class="etiq">Infos pratiques</span>Horaires et jours d'ouverture variables selon la saison : consultez le site du parc avant de partir.</div>
+        <div class="carte brique"><span class="etiq">Bon plan · −20 %</span>Sur chaque entrée, sur présentation de votre justificatif de location à la Bastide du Bonrepos.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gragnaguette">
+    <div class="part">
+      <img src="img/gragnaguette.jpg" alt="La Gragnaguette" loading="lazy" style="aspect-ratio:4/3">
+      <div class="corps">
+        <div class="sur">Partenaire gourmand</div>
+        <h2>La Gragnaguette</h2>
+        <p>Notre voisin incontournable : un restaurant guinguette unique, visible depuis les hauteurs de la Bastide — et qui a vue directe sur la colline où elle se niche.</p>
+        <ul class="liste" style="margin-top:8px">
+          <li>Plats faits maison, ambiance guinguette</li>
+          <li>Restaurant, bar &amp; grill, planches apéro</li>
+          <li>Sculptures monumentales de dinosaures</li>
+          <li>Basse-cour et terrain de pétanque</li>
+          <li>Animations enfants et piscine (l'été)</li>
+        </ul>
+        <div class="carte brique"><span class="etiq">Bon plan · −10 %</span>Sur votre addition, sur présentation d'un justificatif de séjour à la Bastide.</div>
+        <a class="btn" href="tel:+33766843192">Réserver · 07 66 84 31 92</a>
+        <a class="btn clair" href="mailto:resa@lagragnaguette.com">resa@lagragnaguette.com</a>
+        <h4 style="margin-top:22px">Menus de groupe</h4>
+        <p class="intro" style="font-size:13.5px">Faites glisser pour voir les trois menus, touchez pour agrandir.</p>
+        <div class="menus">
+          <a href="img/menu-velociraptor.jpg" target="_blank"><img src="img/menu-velociraptor.jpg" alt="Menu Vélociraptor, 30 € par personne" loading="lazy"></a>
+          <a href="img/menu-trex.jpg" target="_blank"><img src="img/menu-trex.jpg" alt="Menu T-Rex, 35 € par personne" loading="lazy"></a>
+          <a href="img/menu-spinosaure.jpg" target="_blank"><img src="img/menu-spinosaure.jpg" alt="Menu Spinosaure, 42 € par personne" loading="lazy"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="transferts">
+    <div class="part">
+      <div class="corps">
+        <img src="img/vtc-logo.jpg" alt="Tristan VT Confort, chauffeur privé" loading="lazy" style="width:150px;border-radius:10px;margin-bottom:14px">
+        <div class="sur">Partenaire transport</div>
+        <h2>Transferts &amp; chauffeur privé</h2>
+        <p>Tristan Mbongo (VT Confort) vous conduit de l'aéroport ou de la gare jusqu'à la Bastide, et vous ramène de Toulouse après vos soirées.</p>
+        <div class="voitures">
+          <div><img src="img/vtc-berline.jpg" alt="Berline standard" loading="lazy"><b>Berline standard</b><span>4 places</span></div>
+          <div><img src="img/vtc-classe-e.jpg" alt="Mercedes Classe E" loading="lazy"><b>Mercedes Classe E</b><span>3 places</span></div>
+          <div><img src="img/vtc-classe-v.jpg" alt="Mercedes Classe V" loading="lazy"><b>Mercedes Classe V</b><span>7 places</span></div>
+          <div><img src="img/vtc-classe-s.jpg" alt="Mercedes Classe S" loading="lazy"><b>Mercedes Classe S</b><span>3 places</span></div>
+        </div>
+        <h4>Tarifs partenaires 2027</h4>
+        <p class="intro" style="font-size:12.5px">Faites glisser le tableau pour voir toutes les voitures.</p>
+        <div class="defile">
+          <table class="tab">
+            <thead><tr><th>Trajet</th><th>Berline</th><th>Classe E</th><th>Classe V</th><th>Classe S</th></tr></thead>
+            <tbody>
+              <tr class="groupe"><td colspan="5">Depuis le centre-ville<small style="font:400 12px Poppins;color:var(--doux)">jour (7h30 – 20h30) et nuit (20h30 – 7h30), même tarif</small></td></tr>
+              <tr><td>Hôtel centre-ville → aéroport Toulouse</td><td>45 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
+              <tr><td>Hôtel centre-ville → gare Matabiau</td><td>45 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
+              <tr class="groupe"><td colspan="5">Accueil avec pancarte<small style="font:400 12px Poppins;color:var(--doux)">jour et nuit</small></td></tr>
+              <tr><td>Aéroport Toulouse-Blagnac → hôtel centre-ville</td><td>60 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
+              <tr><td>Gare Matabiau → hôtel centre-ville</td><td>60 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
+              <tr class="groupe"><td colspan="5">Autres prestations</td></tr>
+              <tr><td>Chauffeur à disposition (par heure)<small>sur demande au-delà de 100 km de Toulouse</small></td><td>60 €</td><td>70 €</td><td>80 €</td><td>110 €</td></tr>
+              <tr><td>Course minimum</td><td>45 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
+              <tr><td>Transport hors Toulouse</td><td colspan="4" style="text-align:center">sur demande</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="intro" style="font-size:12.5px;margin-top:8px">Tous les tarifs sont TTC. Pour un trajet jusqu'à la Bastide, demandez directement un prix à Tristan.</p>
+        <a class="btn" href="tel:+33644210324">Réserver · 06 44 21 03 24</a>
+        <a class="btn clair" href="mailto:tristanvtconfort@gmail.com">E-mail</a>
+        <a class="btn clair" href="https://www.toulouse-vtc-chauffeur.com/" target="_blank" rel="noopener">Site web</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cocktails">
+    <div class="part">
+      <div class="duo" style="margin:0;grid-template-columns:1fr 1fr 1fr;gap:0"><img src="img/cocktail1.jpg" alt="" loading="lazy" style="border-radius:0"><img src="img/cocktail2.jpg" alt="" loading="lazy" style="border-radius:0"><img src="img/cocktail3.jpg" alt="" loading="lazy" style="border-radius:0"></div>
+      <div class="corps">
+        <div class="sur">Partenaire événementiel</div>
+        <h2>Platines &amp; Cocktails</h2>
+        <p>Depuis 2015, cette équipe toulousaine propose des bars à cocktails animés par des mixologues, des ateliers cocktails participatifs, ainsi que la sonorisation et l'éclairage de tous types d'événements. Solutions sur-mesure et clé en main, directement à la Bastide.</p>
+        <ul class="liste" style="margin-top:8px">
+          <li><b>Événements privés</b> : mariage, anniversaire, baptême, EVG/EVJF, garden party…</li>
+          <li><b>Événements professionnels</b> : séminaire, team building (atelier de 12 à 40 participants, environ 2 h), soirée clients…</li>
+        </ul>
+        <div class="grille" style="margin-top:12px">
+          <div class="carte sable" style="margin:0"><span class="etiq">Bar à cocktails</span><b style="font:500 20px Lora,serif;color:var(--brique)">9,90 € TTC</b> / cocktail<p style="font-size:13.5px;margin-top:4px">80 cocktails minimum · 3 cocktails ou mocktails au choix, réalisés sur place · bar mobile, barman, glaçons et verrerie. Prix dégressifs selon quantité.</p></div>
+          <div class="carte sable" style="margin:0"><span class="etiq">Atelier cocktails</span><b style="font:500 20px Lora,serif;color:var(--brique)">60 € TTC</b> / pers.<p style="font-size:13.5px;margin-top:4px">12 participants minimum, environ 2 h · histoire du cocktail, ustensiles et techniques, réalisation et dégustation, défi « masterclass » en équipe.</p></div>
+          <div class="carte sable" style="margin:0"><span class="etiq">DJ ou groupe live</span><b style="font:500 20px Lora,serif;color:var(--brique)">dès 800 € TTC</b><p style="font-size:13.5px;margin-top:4px">Sonorisation complète, installation et démontage, tests techniques. Options : éclairage, fumée…</p></div>
+          <div class="carte sable" style="margin:0"><span class="etiq">Options premium</span><p style="font-size:13.5px">Bulle aromatisée, cocktail imprimé à votre image, flair show.</p></div>
+        </div>
+        <h4 style="margin-top:22px">Suggestions cocktails</h4>
+        <details class="carte" style="margin-top:6px"><summary style="cursor:pointer;font-weight:500">Les classiques</summary>
+          <ul class="liste" style="margin-top:8px;font-size:14px">
+            <li><b>Mojito</b> — rhum, menthe fraîche, citron vert, Perrier, Angostura (classique ou fruit de saison)</li>
+            <li><b>Mules</b> — Moscow, London ou Caribbean : vodka, gin ou rhum, citron vert, ginger beer</li>
+            <li><b>Piña colada</b> — rhum blanc, rhum ambré, jus d'ananas, crème de coco, vanille</li>
+            <li><b>Cosmopolitan</b> — vodka, Cointreau, citron vert, cranberry</li>
+            <li><b>Sex on the beach</b> — vodka, liqueur de framboise, sirop de melon, cranberry, ananas</li>
+            <li><b>Caipirinha</b> — cachaça, citron vert, sucre blanc (classique ou fruit de saison)</li>
+            <li><b>Margarita</b> — tequila, triple sec, jus de citron (classique ou fruit de saison)</li>
+            <li><b>Punch maison</b> — rhums blanc et ambré, mangue, ananas, goyave, citron vert, cannelle, vanille</li>
+            <li><b>Mai tai</b> — rhums blanc et ambré, Cointreau, citron vert, sirop d'orgeat</li>
+            <li><b>Spritz</b> — Aperol, St-Germain ou Campari, eau gazeuse, orange, prosecco</li>
+            <li><b>Basil smash</b> — gin, basilic frais, citron jaune, sucre de canne</li>
+            <li><b>Old fashioned</b> — whisky, zeste d'orange, sucre, bitter</li>
+          </ul>
+        </details>
+        <details class="carte"><summary style="cursor:pointer;font-weight:500">Automne – hiver</summary>
+          <ul class="liste" style="margin-top:8px;font-size:14px">
+            <li><b>Caribbean</b> — rhum ambré, liqueur de passion, ananas, citron vert, falernum</li>
+            <li><b>Verger</b> — vodka, liqueur de sureau, sirop de poire, jus de pomme, yuzu</li>
+            <li><b>Le Voyageur</b> — gin, liqueur de pamplemousse, poivre de timut, orange sanguine, vanille</li>
+            <li><b>La Vie en rose</b> — gin, Soho, citron jaune, sirop d'hibiscus, limonade à la rose</li>
+            <li><b>P'tit mousse</b> — tequila, Lillet blanc, pamplemousse, sirop de romarin, blanc d'œuf</li>
+            <li><b>Cosmotolosan</b> — vodka, Cointreau, sirop de violette, cranberry, citron vert</li>
+            <li><b>Hurricane</b> — rhums ambré et blanc, passion, orange, citron vert, grenadine</li>
+            <li><b>Agrumiska</b> — vodka, Soho, orange, mandarine, sirop de fraise, tonic</li>
+            <li><b>Queensland style</b> — rhums blanc et ambré, litchi, crème de coco, macadamia</li>
+            <li><b>Flock o'clock</b> — armagnac, floc rouge, grenade, citron vert, hibiscus</li>
+            <li><b>Wapplesky</b> — whisky écossais, pomme, miel, vanille, bitter orange</li>
+            <li><b>Point Germain</b> — gin, liqueur de fleur de sureau, cranberry, citron vert</li>
+          </ul>
+        </details>
+        <a class="btn" href="tel:+33663106934">Devis · 06 63 10 69 34</a>
+        <a class="btn clair" href="mailto:platinesetcocktails@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="watts">
+    <div class="part" style="background:#2c211c;color:#f4ebe2">
+      <div class="corps">
+        <div class="sur" style="color:#e2b49c">Partenaire musique live</div>
+        <h2 style="color:#fff">Watts Elle's</h2>
+        <span class="etiq" style="color:#c9b3a5">Chanteuse solo · Haute-Garonne, Gers &amp; environs</span>
+        <p class="sur" style="color:#f4ebe2;font-size:16px;margin-top:10px">« Donner une âme musicale à vos événements, créer des émotions partagées et accompagner vos plus beaux souvenirs avec élégance. »</p>
+        <table class="tab" style="margin-top:12px;color:#f4ebe2">
+          <tbody>
+            <tr><td style="border-color:rgba(255,255,255,.15)"><b>Cérémonie</b> (laïque et/ou religieuse)<small style="color:#c9b3a5">Accompagnement vocal des temps forts : entrée, vœux, alliances, signatures, sortie.</small></td><td style="border-color:rgba(255,255,255,.15)">dès 230 €</td></tr>
+            <tr><td style="border-color:rgba(255,255,255,.15)"><b>Vin d'honneur</b><small style="color:#c9b3a5">Une ambiance chaleureuse et raffinée pour rythmer votre cocktail.</small></td><td style="border-color:rgba(255,255,255,.15)">dès 350 €</td></tr>
+            <tr><td style="border-color:rgba(255,255,255,.15)"><b>Cocktail &amp; lounge</b><small style="color:#c9b3a5">Animation douce et feutrée (jazz, pop acoustique, soul) pour réceptions et dîners.</small></td><td style="border-color:rgba(255,255,255,.15)">dès 300 €</td></tr>
+            <tr><td style="border-color:rgba(255,255,255,.15)"><b>Soirée festive &amp; concert</b><small style="color:#c9b3a5">Pop, variété et tubes pour faire danser vos invités.</small></td><td style="border-color:rgba(255,255,255,.15)">dès 300 €</td></tr>
+            <tr><td style="border-color:rgba(255,255,255,.15)"><b>Formule sur-mesure</b><small style="color:#c9b3a5">Combinaison de moments (ex. cérémonie + vin d'honneur) ou demande spécifique.</small></td><td style="border-color:rgba(255,255,255,.15)">sur devis</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13.5px;margin-top:12px"><b>Inclus</b> : sonorisation et éclairage autonomes (jusqu'à 150 personnes, une simple prise suffit). 1 à 2 titres « coup de cœur » hors répertoire possibles.</p>
+        <p style="font-size:13.5px"><b>Déplacements</b> : inclus dans le secteur proche, puis 0,45 €/km. Structure associative : factures officielles, TVA non applicable.</p>
+        <a class="btn" href="tel:+33664411842" style="background:#fff;color:var(--brique-f)">Devis gratuit · 06 64 41 18 42</a>
+        <a class="btn clair" href="mailto:wattselles9@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="theo">
+    <div class="part">
+      <img src="img/theo1.jpg" alt="Théo Lemaire en spectacle" loading="lazy" style="aspect-ratio:4/3">
+      <div class="corps">
+        <div class="sur">Partenaire animation</div>
+        <h2>Théo Lemaire</h2>
+        <span class="etiq">Magicien &amp; mentaliste · Toulouse</span>
+        <p style="margin-top:8px">Une magie moderne et raffinée, sans vulgarité, qui brise la glace entre les invités, comble les temps morts et marque toutes les générations.</p>
+        <table class="tab" style="margin-top:12px">
+          <thead><tr><th>Animation</th><th>Durée</th><th>Tarif</th></tr></thead>
+          <tbody>
+            <tr><td>Close-up cocktail / vin d'honneur<small>magie de proximité en déambulation</small></td><td>1h à 1h30</td><td>450 €</td></tr>
+            <tr><td>Spectacle enfants<small>show visuel et interactif pendant le cocktail</small></td><td>45 min</td><td>400 €</td></tr>
+            <tr><td>De table en table<small>entre les plats, pendant le repas</small></td><td>le repas</td><td>500 €</td></tr>
+            <tr><td>Mini-spectacle « transition danse »<small>entre le plat et le dessert</small></td><td>10 à 20 min</td><td>300 €</td></tr>
+          </tbody>
+        </table>
+        <div class="carte brique"><span class="etiq">Best-seller · expérience Étincelle</span>Spectacle enfants + table en table + mini-spectacle collectif : <b>900 €</b> au lieu de 1 200 €</div>
+        <p class="intro" style="font-size:13px">Animations combinables, tours personnalisés possibles avec les témoins. Déplacement inclus dans Toulouse et sa première couronne, sur devis au-delà. En haute saison, réservez 6 à 12 mois à l'avance.</p>
+        <a class="btn" href="tel:+33646388091">Réserver · 06 46 38 80 91</a>
+        <a class="btn clair" href="mailto:theo.lemaire.magicien@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sourires">
+    <div class="part">
+      <div class="duo" style="margin:0;padding:14px 14px 0"><img src="img/photobooth.jpg" alt="Le photobooth en bois" loading="lazy" style="object-fit:contain;background:#faf7f2"><img src="img/photos.jpg" alt="Tirages photo" loading="lazy" style="object-fit:contain;background:#faf7f2"></div>
+      <div class="corps">
+        <div class="sur">Partenaire souvenirs</div>
+        <h2>Sourires &amp; Souvenirs</h2>
+        <p>Location de photobooth en bois fait maison, par une jeune entreprise toulousaine.</p>
+        <p>Un vrai appareil Canon et une imprimante professionnelle : des photos de qualité studio, imprimées sur place. Mariages, anniversaires, baptêmes ou soirées d'entreprise.</p>
+        <h4>Les formules</h4>
+        <div class="prix">
+          <div class="carte"><span class="etiq">Sourire</span><big>250 €</big><span>100 tirages<br>moins de 40 invités</span></div>
+          <div class="carte" style="outline:2px solid var(--brique)"><span class="etiq">Rire</span><big>320 €</big><span>200 tirages<br>40 à 70 invités</span></div>
+          <div class="carte"><span class="etiq">Fou rire</span><big>390 €</big><span>400 tirages<br>plus de 70 invités</span></div>
+        </div>
+        <h4>Inclus</h4>
+        <ul class="liste">
+          <li>Design et format personnalisés</li><li>Livraison et installation</li><li>Accessoires (lunettes, chapeaux…)</li>
+          <li>Impressions instantanées</li><li>Téléchargement numérique illimité et galerie en ligne</li>
+        </ul>
+        <a class="btn" href="tel:+33676791584">Réserver · 06 76 79 15 84</a>
+        <a class="btn clair" href="mailto:contact@souriresetsouvenirs.fr">E-mail</a>
+        <a class="btn clair" href="https://souriresetsouvenirs.fr" target="_blank" rel="noopener">Site web</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRATIQUE ===================== -->
+  <div class="partie-titre"><span>Pratique</span></div>
+
+  <section id="utiles">
+    <div class="sur">Informations</div>
+    <h2>Utiles</h2>
+    <h4>Numéros d'urgence</h4>
+    <div class="urgences">
+      <a href="tel:112"><b>112</b><span>Urgences</span></a>
+      <a href="tel:15"><b>15</b><span>SAMU</span></a>
+      <a href="tel:17"><b>17</b><span>Police</span></a>
+      <a href="tel:18"><b>18</b><span>Pompiers</span></a>
+    </div>
+    <div class="carte sable"><b>Défibrillateur</b> — à la mairie de Bonrepos-Riquet, sur la façade extérieure, côté route.</div>
+    <div class="grille">
+      <div class="carte" style="margin:0"><span class="etiq">Médecins &amp; pharmacies</span>
+        <ul class="liste" style="font-size:14px">
+          <li><b>Verfeil</b> : Dr Christian Prévot — <a href="tel:+33562228391">05 62 22 83 91</a>, et pharmacie</li>
+          <li><b>Montastruc</b> : pharmacie et cabinet médical, 78 av. du Général-Castelnau — <a href="tel:+33561842187">05 61 84 21 87</a></li>
+          <li><b>Hôpital le plus proche</b> : L'Union</li>
+        </ul>
+      </div>
+      <div class="carte" style="margin:0"><span class="etiq">Marchés de producteurs</span>
+        <ul class="liste" style="font-size:14px">
+          <li><b>Lavaur (81)</b> : mercredi matin</li>
+          <li><b>Verfeil ou Montastruc</b> : dimanche matin</li>
+          <li><b>Bessières</b> : lundi matin</li>
+        </ul>
+      </div>
+      <div class="carte" style="margin:0"><span class="etiq">Commerces de proximité</span>
+        <ul class="liste" style="font-size:14px"><li>Gragnague</li><li>Verfeil</li><li>Montastruc</li></ul>
+      </div>
+      <div class="carte" style="margin:0"><span class="etiq">Grandes surfaces</span>
+        <ul class="liste" style="font-size:14px">
+          <li>E.Leclerc — Rouffiac-Tolosan</li><li>Intermarché — Verfeil</li><li>Intermarché et Lidl — Garidech</li><li>Super U — Bessières</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="partir">
+    <div class="sur">Avant de</div>
+    <h2>Partir</h2>
+    <p class="intro">Merci de suivre ces quelques étapes pour laisser la Bastide en bon état. Départ au plus tard à 11h. Vous pouvez cocher au fur et à mesure.</p>
+    <div class="carte">
+      <ul class="coche" id="coche">
+        <li><label><input type="checkbox"><span>Rassemblez le linge de lit et de toilette</span></label></li>
+        <li><label><input type="checkbox"><span>Videz et triez les poubelles, puis sortez-les</span></label></li>
+        <li><label><input type="checkbox"><span>Faites la vaisselle et rangez-la à sa place</span></label></li>
+        <li><label><input type="checkbox"><span>Videz le lave-vaisselle, le lave-linge et le sèche-linge</span></label></li>
+        <li><label><input type="checkbox"><span>Laissez les salles de bain propres</span></label></li>
+        <li><label><input type="checkbox"><span>Essuyez les plans de travail</span></label></li>
+        <li><label><input type="checkbox"><span>Vérifiez placards et tiroirs pour ne rien oublier</span></label></li>
+        <li><label><input type="checkbox"><span>Éteignez le sauna, baissez la température du jacuzzi et refermez sa couverture</span></label></li>
+        <li><label><input type="checkbox"><span>Bâchez la piscine</span></label></li>
+        <li><label><input type="checkbox"><span>Éteignez toutes les lumières, fermez les fenêtres et les portes</span></label></li>
+        <li><label><input type="checkbox"><span>Attendez l'arrivée de l'hôte pour le check-out</span></label></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="fin">
+    <div class="photo"><img src="img/merci.jpg" alt="" loading="lazy" style="aspect-ratio:16/9"></div>
+    <div class="sur">À bientôt</div>
+    <h2>Merci !</h2>
+    <p>Merci d'avoir choisi la Bastide du Bonrepos. Nous espérons que vous y avez passé un excellent moment.</p>
+    <p class="intro">Notre porte vous sera toujours ouverte : nous serions ravis de vous accueillir à nouveau. Nous vous souhaitons un bon retour chez vous.</p>
+    <div class="carte sable" style="margin-top:18px"><span class="etiq">Votre avis compte</span>Vous avez apprécié votre séjour ? Un avis nous aide énormément. Merci d'avance !</div>
+    <img class="logo" src="img/logo.jpg" alt="La Bastide du Bonrepos">
+  </section>
+</main>
+
+<footer>
+  <b>La Bastide du Bonrepos</b>
+  441 route de l'Hermitage · 31590 Bonrepos-Riquet<br>
+  <a href="tel:+33685213518">06 85 21 35 18</a> · <a href="mailto:realty.conciergerie@gmail.com">realty.conciergerie@gmail.com</a>
+</footer>
+
+<div class="toast" id="toast">Mot de passe copié</div>
+
+<script>
+(function(){
+  var barre=document.getElementById('barre'), menu=document.getElementById('menu');
+  function surCouv(){barre.classList.toggle('vue',window.scrollY>window.innerHeight*0.6)}
+  window.addEventListener('scroll',surCouv,{passive:true}); surCouv();
+  document.querySelectorAll('[data-ouvrir]').forEach(function(b){b.onclick=function(){menu.classList.add('ouvert');document.body.style.overflow='hidden'}});
+  function fermer(){menu.classList.remove('ouvert');document.body.style.overflow=''}
+  document.querySelector('[data-fermer]').onclick=fermer;
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',fermer)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')fermer()});
+
+  var toast=document.getElementById('toast');
+  document.getElementById('copier').onclick=function(){
+    var t=document.getElementById('mdp').textContent.trim();
+    function ok(){toast.classList.add('vu');setTimeout(function(){toast.classList.remove('vu')},1800)}
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(ok,function(){})}
+    else{var r=document.createRange();r.selectNodeContents(document.getElementById('mdp'));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');ok()}catch(e){}}
+  };
+
+  var cases=document.querySelectorAll('#coche input'), cle='bastide-depart';
+  var etat=[]; try{etat=JSON.parse(localStorage.getItem(cle)||'[]')}catch(e){}
+  cases.forEach(function(c,i){c.checked=!!etat[i];c.onchange=function(){
+    var v=[];cases.forEach(function(x){v.push(x.checked)});try{localStorage.setItem(cle,JSON.stringify(v))}catch(e){}
+  }});
+})();
+</script>
+</body>
+</html>
