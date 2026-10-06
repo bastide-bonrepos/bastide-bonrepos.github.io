@@ -177,6 +177,14 @@ p+p{margin-top:10px}
 .voitures b{display:block;font:500 13px Poppins;margin-top:6px}
 .voitures span{font-size:12px;color:var(--doux)}
 @media(min-width:560px){.voitures{grid-template-columns:repeat(4,1fr)}}
+.tab.vtc{font-size:12.5px;table-layout:fixed}
+.tab.vtc th{font-size:9.5px;letter-spacing:.04em;text-align:center;padding:4px 1px;vertical-align:bottom;width:15%}
+.tab.vtc th:first-child{width:40%;text-align:left}
+.tab.vtc th img{width:100%;max-width:56px;aspect-ratio:16/10;object-fit:contain;margin:0 auto 3px}
+.tab.vtc td{text-align:center;padding:8px 1px}
+.tab.vtc td:first-child{text-align:left;padding-right:4px}
+.tab.vtc .groupe td{font-size:13.5px}
+.tab.vtc .groupe small{display:block;font:400 11.5px Poppins;color:var(--doux)}
 /* Avant de partir */
 .coche{list-style:none}
 .coche label{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--trait);cursor:pointer}
@@ -769,24 +777,25 @@ footer b{display:block;font:italic 500 20px Lora,serif;color:var(--brique-f);mar
           <div><img src="img/vtc-classe-s.jpg" alt="Mercedes Classe S" loading="lazy"><b>Mercedes Classe S</b><span>3 places</span></div>
         </div>
         <h4>Tarifs partenaires 2027</h4>
-        <p class="intro" style="font-size:12.5px">Faites glisser le tableau pour voir toutes les voitures.</p>
-        <div class="defile">
-          <table class="tab">
-            <thead><tr><th>Trajet</th><th>Berline</th><th>Classe E</th><th>Classe V</th><th>Classe S</th></tr></thead>
-            <tbody>
-              <tr class="groupe"><td colspan="5">Depuis le centre-ville<small style="font:400 12px Poppins;color:var(--doux)">jour (7h30 – 20h30) et nuit (20h30 – 7h30), même tarif</small></td></tr>
-              <tr><td>Hôtel centre-ville → aéroport Toulouse</td><td>45 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
-              <tr><td>Hôtel centre-ville → gare Matabiau</td><td>45 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
-              <tr class="groupe"><td colspan="5">Accueil avec pancarte<small style="font:400 12px Poppins;color:var(--doux)">jour et nuit</small></td></tr>
-              <tr><td>Aéroport Toulouse-Blagnac → hôtel centre-ville</td><td>60 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
-              <tr><td>Gare Matabiau → hôtel centre-ville</td><td>60 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
-              <tr class="groupe"><td colspan="5">Autres prestations</td></tr>
-              <tr><td>Chauffeur à disposition (par heure)<small>sur demande au-delà de 100 km de Toulouse</small></td><td>60 €</td><td>70 €</td><td>80 €</td><td>110 €</td></tr>
-              <tr><td>Course minimum</td><td>45 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
-              <tr><td>Transport hors Toulouse</td><td colspan="4" style="text-align:center">sur demande</td></tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="tab vtc">
+          <thead><tr><th>Trajet</th>
+            <th><img src="img/vtc-berline.jpg" alt="">Berline</th>
+            <th><img src="img/vtc-classe-e.jpg" alt="">Cl. E</th>
+            <th><img src="img/vtc-classe-v.jpg" alt="">Cl. V</th>
+            <th><img src="img/vtc-classe-s.jpg" alt="">Cl. S</th></tr></thead>
+          <tbody>
+            <tr class="groupe"><td colspan="5">Depuis le centre-ville<small>jour et nuit, même tarif</small></td></tr>
+            <tr><td>Hôtel → aéroport</td><td>45 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
+            <tr><td>Hôtel → gare Matabiau</td><td>45 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
+            <tr class="groupe"><td colspan="5">Accueil avec pancarte<small>jour et nuit</small></td></tr>
+            <tr><td>Aéroport → hôtel</td><td>60 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
+            <tr><td>Gare Matabiau → hôtel</td><td>60 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
+            <tr class="groupe"><td colspan="5">Autres prestations</td></tr>
+            <tr><td>Chauffeur à disposition<small>par heure</small></td><td>60 €</td><td>70 €</td><td>80 €</td><td>110 €</td></tr>
+            <tr><td>Course minimum</td><td>45 €</td><td>60 €</td><td>80 €</td><td>110 €</td></tr>
+            <tr><td>Hors Toulouse<small>ou plus de 100 km</small></td><td colspan="4" style="text-align:center">sur demande</td></tr>
+          </tbody>
+        </table>
         <p class="intro" style="font-size:12.5px;margin-top:8px">Tous les tarifs sont TTC. Pour un trajet jusqu'à la Bastide, demandez directement un prix à Tristan.</p>
         <a class="btn" href="tel:+33644210324">Réserver · 06 44 21 03 24</a>
         <a class="btn clair" href="mailto:tristanvtconfort@gmail.com">E-mail</a>
